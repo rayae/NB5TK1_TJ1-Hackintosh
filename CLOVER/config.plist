@@ -396,7 +396,7 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				AACbPg==
+				BAClPg==
 				</data>
 				<key>device-id</key>
 				<data>
@@ -407,6 +407,10 @@
 				AQAAAA==
 				</data>
 				<key>enable-hdmi20</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con1-busid</key>
 				<data>
 				AQAAAA==
 				</data>
@@ -426,17 +430,21 @@
 				<data>
 				/////w==
 				</data>
+				<key>framebuffer-fbmem</key>
+				<data>
+				AACQAA==
+				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-pipecount</key>
-				<data>
-				AgAAAA==
-				</data>
 				<key>framebuffer-portcount</key>
 				<data>
 				AgAAAA==
+				</data>
+				<key>framebuffer-stolenmem</key>
+				<data>
+				AAAwAQ==
 				</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>
@@ -516,6 +524,11 @@
 		</dict>
 		<key>#ig-platform-id</key>
 		<string>0x3e9b0000</string>
+		<key>EDID</key>
+		<dict>
+			<key>Inject</key>
+			<false/>
+		</dict>
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
@@ -755,7 +768,7 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
-		<string>MacBookPro15,1</string>
+		<string>MacBookPro15,2</string>
 		<key>Trust</key>
 		<true/>
 	</dict>
