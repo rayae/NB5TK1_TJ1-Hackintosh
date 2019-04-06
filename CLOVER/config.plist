@@ -31,6 +31,8 @@
 				<key>FixTMR</key>
 				<false/>
 			</dict>
+			<key>Name</key>
+			<string>DSDT-Clevo-Control.aml</string>
 			<key>Patches</key>
 			<array>
 				<dict>
