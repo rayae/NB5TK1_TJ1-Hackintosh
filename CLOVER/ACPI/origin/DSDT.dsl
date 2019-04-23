@@ -5,24 +5,24 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri Apr 19 19:44:39 2019
+ * Disassembly of DSDT.aml, Mon Apr 22 10:53:45 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00045B8D (285581)
+ *     Length           0x00045A3F (285247)
  *     Revision         0x02
- *     Checksum         0xEC
+ *     Checksum         0xEE
  *     OEM ID           "ALASKA"
  *     OEM Table ID     "A M I"
  *     OEM Revision     0x01072009 (17244169)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20180427 (538444839)
+ *     Compiler Version 0x20160527 (538314023)
  */
 DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 {
     /*
-     * iASL Warning: There were 84 external control methods found during
-     * disassembly, but only 73 were resolved (11 unresolved). Additional
+     * iASL Warning: There were 86 external control methods found during
+     * disassembly, but only 73 were resolved (13 unresolved). Additional
      * ACPI tables may be required to properly disassemble the code. This
      * resulting disassembler output file may not compile because the
      * disassembler did not know how many arguments to assign to the
@@ -69,24 +69,24 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     External (_SB_.HWPI, IntObj)    // (from opcode)
     External (_SB_.IETM, DeviceObj)    // (from opcode)
     External (_SB_.ITBI, IntObj)    // (from opcode)
-    External (_SB_.PCI0.HDEF.PPMS, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.HDEF.PS0X, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.HDEF.PS3X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.ALSI, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CBLV, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CDCK, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.CLID, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.GSSE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.LCD0, DeviceObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.PDDS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.GFX0.STAT, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.GFX0.TCHE, UnknownObj)    // (from opcode)
+    External (_SB_.PCI0.HDAS.PPMS, MethodObj)    // 1 Arguments (from opcode)
+    External (_SB_.PCI0.HDAS.PS0X, MethodObj)    // 0 Arguments (from opcode)
+    External (_SB_.PCI0.HDAS.PS3X, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.HIDW, MethodObj)    // 4 Arguments (from opcode)
     External (_SB_.PCI0.HIWC, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.PCI0.I2C1.INC1, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.ALSI, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.CBLV, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.CDCK, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.CLID, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.DD1F, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.IGPU.GSSE, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.LCD0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.PDDS, MethodObj)    // 1 Arguments (from opcode)
-    External (_SB_.PCI0.IGPU.STAT, UnknownObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU.TCHE, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.H_EC.CHRG, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.H_EC.XDAT, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments (from opcode)
@@ -162,9 +162,14 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     External (AL6F, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (ALSE, UnknownObj)    // (from opcode)
     External (BRTL, UnknownObj)    // (from opcode)
+    External (CFGD, UnknownObj)    // Warning: Unknown object
+    External (CPPC, UnknownObj)    // Warning: Unknown object
     External (CRBI, UnknownObj)    // (from opcode)
     External (DIDX, UnknownObj)    // (from opcode)
-    External (GPRW, IntObj)    // Warning: Unknown object
+    External (DSAE, UnknownObj)    // Warning: Unknown object
+    External (ELNG, IntObj)    // Warning: Unknown object
+    External (EMNA, IntObj)    // Warning: Unknown object
+    External (EPCS, UnknownObj)    // Warning: Unknown object
     External (GSMI, UnknownObj)    // (from opcode)
     External (HLVT, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (IGDS, UnknownObj)    // (from opcode)
@@ -178,10 +183,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     External (M64B, UnknownObj)    // (from opcode)
     External (M64L, UnknownObj)    // (from opcode)
     External (MDBG, MethodObj)    // 1 Arguments (from opcode)
+    External (P0L6, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (P0WK, UnknownObj)    // (from opcode)
     External (P1GP, UnknownObj)    // (from opcode)
+    External (P1L6, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (P1WK, UnknownObj)    // (from opcode)
     External (P2GP, UnknownObj)    // (from opcode)
+    External (P2L6, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (P2WK, UnknownObj)    // (from opcode)
     External (PC00, IntObj)    // (from opcode)
     External (PC01, UnknownObj)    // (from opcode)
@@ -204,12 +212,11 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     External (PS2X, MethodObj)    // Warning: Unknown method, guessing 1 arguments
     External (PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (SATC, MethodObj)    // Warning: Unknown method, guessing 1 arguments
-    External (SATD, IntObj)    // (from opcode)
+    External (SATD, IntObj)    // Warning: Unknown object
     External (SGGP, UnknownObj)    // (from opcode)
     External (SGMD, UnknownObj)    // (from opcode)
     External (VMOF, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (VMON, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (XOSI, MethodObj)    // Warning: Unknown method, guessing 1 arguments
 
     Name (PEBS, 0xE0000000)
     Name (PELN, 0x10000000)
@@ -262,7 +269,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     Name (TPMC, 0xFFFFFFFF)
     Name (TPMM, 0xFED40000)
     Name (FTPM, 0xFED40040)
-    Name (PPIM, 0x7A106F98)
+    Name (PPIM, 0x7A0E0F98)
     Name (PPIL, 0x1C)
     Name (AMDT, Zero)
     Name (TPMF, One)
@@ -273,10 +280,10 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     Name (SS3, One)
     Name (SS4, One)
     Name (IOST, 0xC400)
-    Name (TOPM, Zero)
+    Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
-    OperationRegion (GNVS, SystemMemory, 0x7A09C000, 0x08E2)
+    OperationRegion (GNVS, SystemMemory, 0x7A076000, 0x08E2)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -4383,7 +4390,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
             Scope (\_SB.PCI0)
             {
-                Device (IGPU)
+                Device (GFX0)
                 {
                     Name (_ADR, 0x00020000)  // _ADR: Address
                 }
@@ -4738,7 +4745,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -4979,7 +4986,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -5220,7 +5227,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -5461,7 +5468,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -5702,7 +5709,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -5943,8 +5950,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -6185,8 +6191,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -6427,8 +6432,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -6669,8 +6673,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -6911,8 +6914,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -7153,8 +7155,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -7395,8 +7396,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -7637,8 +7637,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -7879,8 +7878,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -8121,8 +8119,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -8363,8 +8360,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -8605,8 +8601,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -8847,8 +8842,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -9089,8 +9083,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -9331,8 +9324,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -9573,8 +9565,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -9815,8 +9806,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -10057,8 +10047,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -10299,8 +10288,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW)
-
+                        Return (GPRW (0x69, 0x04))
                     }
                 }
 
@@ -10376,11 +10364,11 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     {
                         If (LIDS)
                         {
-                            Store (0x03, ^^IGPU.CLID)
+                            Store (0x03, ^^GFX0.CLID)
                         }
                         Else
                         {
-                            Store (Zero, ^^IGPU.CLID)
+                            Store (Zero, ^^GFX0.CLID)
                         }
                     }
 
@@ -10517,14 +10505,16 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     })
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
-        If (LOr (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)), LEqual (Arg0, 0x05))) {}
-        ElseIf (Arg0)
+        If (LNotEqual(Arg0,5)) {
+If (Arg0)
         {
             \_SB.TPM.TPTS (Arg0)
             RPTS (Arg0)
             \_SB.PCI0.LPCB.SPTS (Arg0)
             \_SB.PCI0.NPTS (Arg0)
         }
+}
+
     }
 
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
@@ -10906,7 +10896,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             Name (_HID, "ACPI000C")  // _HID: Hardware ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (XOSI ("Processor Aggregator Device"))
+                If (_OSI ("Processor Aggregator Device"))
                 {
                     Return (0x0F)
                 }
@@ -11002,7 +10992,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     {
         If (LEqual (And (DIDX, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
+            Notify (\_SB.PCI0.GFX0.DD1F, Arg0)
         }
     }
 
@@ -11204,8 +11194,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11245,8 +11234,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11283,8 +11271,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11321,8 +11308,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11359,8 +11345,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11400,8 +11385,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11438,8 +11422,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11476,8 +11459,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11514,8 +11496,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11555,8 +11536,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11593,8 +11573,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11631,8 +11610,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11669,8 +11647,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11707,8 +11684,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11745,8 +11721,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11783,8 +11758,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11821,8 +11795,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11859,8 +11832,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11897,8 +11869,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11935,8 +11906,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -11973,8 +11943,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -12011,8 +11980,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -12049,8 +12017,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -12087,8 +12054,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
-            Return (GPRW)
-
+            Return (GPRW (0x69, 0x04))
         }
     }
 
@@ -12100,7 +12066,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Name (PNVB, 0x7A106B98)
+    Name (PNVB, 0x7A0E0B98)
     Name (PNVL, 0x0290)
     OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
     Field (PNVA, AnyAcc, Lock, Preserve)
@@ -14469,8 +14435,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
-                    Return (GPRW)
- 
+                    Return (GPRW (0x6D, 0x04))
                 }
 
                 Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -14538,8 +14503,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW)
-
+                Return (GPRW (0x6D, 0x03))
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -15033,7 +14997,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW)
+                Return (GPRW (0x6D, 0x04))
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -15125,7 +15089,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
     Scope (_SB.PCI0)
     {
-        Device (HDEF)
+        Device (HDAS)
         {
             Name (_ADR, 0x001F0003)  // _ADR: Address
             OperationRegion (HDAR, PCI_Config, Zero, 0x0100)
@@ -15141,7 +15105,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW)
+                Return (GPRW (0x6D, 0x04))
             }
 
             Method (_PS0, 0, Serialized)  // _PS0: Power State 0
@@ -15155,7 +15119,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     }
                 }
 
-                If (CondRefOf (\_SB.PCI0.HDEF.PS0X))
+                If (CondRefOf (\_SB.PCI0.HDAS.PS0X))
                 {
                     PS0X ()
                 }
@@ -15172,7 +15136,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     }
                 }
 
-                If (CondRefOf (\_SB.PCI0.HDEF.PS3X))
+                If (CondRefOf (\_SB.PCI0.HDAS.PS3X))
                 {
                     PS3X ()
                 }
@@ -15197,14 +15161,14 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             })
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                ADBG ("HDEF _INI")
-                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y23._MIN, NBAS)  // _MIN: Minimum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y23._MAX, NMAS)  // _MAX: Maximum Base Address
-                CreateQWordField (NBUF, \_SB.PCI0.HDEF._Y23._LEN, NLEN)  // _LEN: Length
+                ADBG ("HDAS _INI")
+                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y23._MIN, NBAS)  // _MIN: Minimum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y23._MAX, NMAS)  // _MAX: Maximum Base Address
+                CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y23._LEN, NLEN)  // _LEN: Length
                 Store (NHLA, NBAS)
                 Add (NHLA, Subtract (NHLL, One), NMAS)
                 Store (NHLL, NLEN)
-                CreateDWordField (DBUF, \_SB.PCI0.HDEF._Y24._BAS, HDBA)  // _BAS: Base Address
+                CreateDWordField (DBUF, \_SB.PCI0.HDAS._Y24._BAS, HDBA)  // _BAS: Base Address
                 Store (DSPM, HDBA)
             }
 
@@ -15234,7 +15198,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             
         }
 
-        Scope (HDEF)
+        Scope (HDAS)
         {
             Device (SNDW)
             {
@@ -18775,7 +18739,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
     Scope (_SB.PCI0)
     {
-        Device (IMEI)
+        Device (HECI)
         {
             Name (_ADR, 0x00160000)  // _ADR: Address
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
@@ -18835,7 +18799,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                Return (GPRW)
+                Return (GPRW (0x6D, 0x04))
             }
 
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
@@ -19198,7 +19162,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     0x0070,             // Range Minimum
                     0x0070,             // Range Maximum
                     0x01,               // Alignment
-                    0x02,               // Length
+                    0x08,               // Length
                     )
                 
             })
@@ -42078,7 +42042,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.HDEF.SNDW)
+    Scope (_SB.PCI0.HDAS.SNDW)
     {
         Device (SWD0)
         {
@@ -49188,7 +49152,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.HDEF)
+    Scope (_SB.PCI0.HDAS)
     {
         Method (PPMS, 1, Serialized)
         {
@@ -50182,9 +50146,9 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
         Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.IGPU.GSCI ()
+                \_SB.PCI0.GFX0.GSCI ()
             }
         }
 
@@ -50205,11 +50169,11 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     {
                         If (LIDS)
                         {
-                            Store (0x03, \_SB.PCI0.IGPU.CLID)
+                            Store (0x03, \_SB.PCI0.GFX0.CLID)
                         }
                         Else
                         {
-                            Store (Zero, \_SB.PCI0.IGPU.CLID)
+                            Store (Zero, \_SB.PCI0.GFX0.CLID)
                         }
                     }
 
@@ -51017,18 +50981,18 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 PWOF,   1, 
                 WFNO,   8, 
                 BPU0,   32, 
-                BDC0,   32, 
-                BFC0,   32, 
+                DC00,8,DC01,8,DC02,8,DC03,8, 
+                FC00,8,FC01,8,FC02,8,FC03,8, 
                 BTC0,   32, 
-                BDV0,   32, 
-                BST0,   32, 
-                BPR0,   32, 
-                BRC0,   32, 
-                BPV0,   32, 
+                DV00,8,DV01,8,DV02,8,DV03,8, 
+                ST00,8,ST01,8,ST02,8,ST03,8, 
+                PR00,8,PR01,8,PR02,8,PR03,8, 
+                RC00,8,RC01,8,RC02,8,RC03,8, 
+                PV00,8,PV01,8,PV02,8,PV03,8, 
                 BTP0,   16, 
                 BRS0,   16, 
-                BCW0,   32, 
-                BCL0,   32, 
+                CW00,8,CW01,8,CW02,8,CW03,8, 
+                CL00,8,CL01,8,CL02,8,CL03,8, 
                 BCG0,   32, 
                 BG20,   32, 
                 BMO0,   64, 
@@ -51105,13 +51069,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 VGAT,   8, 
                 OEM1,   8, 
                 OEM2,   8, 
-                OEM3,   16, 
+                OE30,8,OE31,8, 
                 OEM4,   8, 
                 Offset (0xCE), 
                 DUT1,   8, 
                 DUT2,   8, 
-                RPM1,   16, 
-                RPM2,   16, 
+                RP11,8,RP12,8, 
+                RP21,8,RP22,8, 
                 RPM4,   16, 
                 Offset (0xD7), 
                 DTHL,   8, 
@@ -51123,7 +51087,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 INF2,   8, 
                 MUTE,   1, 
                 Offset (0xE0), 
-                RPM3,   16, 
+                RP31,8,RP32,8, 
                 ECKS,   8, 
                 Offset (0xE4), 
                     ,   4, 
@@ -51197,7 +51161,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 FC00,   8, 
                 FC01,   8, 
                 FG00,   8, 
-                FG01,   8, 
+                FG01,   8,
                 Offset (0xF8), 
                 FCMD,   8, 
                 FDAT,   8, 
@@ -51274,7 +51238,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     }
                     Else
                     {
-                        Notify (IGPU, 0x80)
+                        Notify (GFX0, 0x80)
                     }
                 }
                 ElseIf (^^^^WMI.HKDR)
@@ -51297,7 +51261,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         }
                         Else
                         {
-                            Notify (^^^IGPU.LCD0, 0x87)
+                            Notify (^^^GFX0.LCD0, 0x87)
                         }
                     }
                     ElseIf (And (PSF0, 0x10))
@@ -51306,7 +51270,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     }
                     Else
                     {
-                        Notify (^^^IGPU.LCD0, 0x87)
+                        Notify (^^^GFX0.LCD0, 0x87)
                     }
                 }
                 ElseIf (^^^^WMI.HKDR)
@@ -51329,7 +51293,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         }
                         Else
                         {
-                            Notify (^^^IGPU.LCD0, 0x86)
+                            Notify (^^^GFX0.LCD0, 0x86)
                         }
                     }
                     ElseIf (And (PSF0, 0x10))
@@ -51338,7 +51302,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     }
                     Else
                     {
-                        Notify (^^^IGPU.LCD0, 0x86)
+                        Notify (^^^GFX0.LCD0, 0x86)
                     }
                 }
                 ElseIf (^^^^WMI.HKDR)
@@ -51464,7 +51428,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 }
                 Else
                 {
-                    Notify (^^^IGPU.LCD0, 0x88)
+                    Notify (^^^GFX0.LCD0, 0x88)
                 }
 
                 If (^^^^WMI.HKDR)
@@ -51526,7 +51490,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 }
                 Else
                 {
-                    Notify (^^^IGPU.LCD0, 0x88)
+                    Notify (^^^GFX0.LCD0, 0x88)
                 }
 
                 If (^^^^WMI.HKDR)
@@ -51546,7 +51510,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 Store (0x35, P80B)
                 If (^^^^WMI.HKDR)
                 {
-                    If (And (OEM3, 0x8000))
+                    If (And (B1B2(OE30,OE31), 0x8000))
                     {
                         Store (One, SLFG)
                         Store (0xDE, ^^^^WMI.EVNT)
@@ -51570,7 +51534,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             Method (_Q37, 0, NotSerialized)  // _Qxx: EC Query
             {
                 Store (0x37, P80B)
-                Store (OEM3, Local0)
+                Store (B1B2(OE30,OE31), Local0)
                 If (And (Local0, 0x2000))
                 {
                     Store (One, B15C)
@@ -52378,7 +52342,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         If (One)
                         {
                             Store (^^PCI0.LPCB.EC.FDAT, Local1)
-                            If (And (^^PCI0.LPCB.EC.OEM3, 0x08))
+                            If (And (B1B2(^^PCI0.LPCB.EC.OE30,^^PCI0.LPCB.EC.OE31), 0x08))
                             {
                                 If (And (Local1, 0x02))
                                 {
@@ -52414,7 +52378,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         If (One)
                         {
                             Store (^^PCI0.LPCB.EC.FDAT, Local1)
-                            If (And (^^PCI0.LPCB.EC.OEM3, 0x04))
+                            If (And (B1B2(^^PCI0.LPCB.EC.OE30,^^PCI0.LPCB.EC.OE31), 0x04))
                             {
                                 If (And (Local1, One))
                                 {
@@ -52450,7 +52414,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         If (One)
                         {
                             Store (^^PCI0.LPCB.EC.FDAT, Local1)
-                            If (And (^^PCI0.LPCB.EC.OEM3, 0x10))
+                            If (And (B1B2(^^PCI0.LPCB.EC.OE30,^^PCI0.LPCB.EC.OE31), 0x10))
                             {
                                 If (And (Local1, 0x04))
                                 {
@@ -52521,7 +52485,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         If (One)
                         {
                             Store (^^PCI0.LPCB.EC.FDAT, Local1)
-                            If (And (^^PCI0.LPCB.EC.OEM3, 0x20))
+                            If (And (B1B2(^^PCI0.LPCB.EC.OE30,^^PCI0.LPCB.EC.OE31), 0x20))
                             {
                                 If (And (Local1, 0x08))
                                 {
@@ -52616,7 +52580,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 {
                     If (^^PCI0.LPCB.EC.ECOK)
                     {
-                        Store (^^PCI0.LPCB.EC.BDC0, Local0)
+                        Store (B1B4(^^PCI0.LPCB.EC.DC00,^^PCI0.LPCB.EC.DC01,^^PCI0.LPCB.EC.DC02,^^PCI0.LPCB.EC.DC03), Local0)
                     }
                     Else
                     {
@@ -52679,7 +52643,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 {
                     If (LEqual (And (PSF0, 0x10), Zero))
                     {
-                        If (^^PCI0.IGPU.PDDS (0x0300))
+                        If (^^PCI0.GFX0.PDDS (0x0300))
                         {
                             Store (One, Local0)
                         }
@@ -54458,10 +54422,10 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 CreateByteField (WBEC, 0x17, W014)
                 CreateByteField (WBEC, 0x18, W015)
                 CreateByteField (WBEC, 0x19, W016)
-                Store (^^PCI0.LPCB.EC.RPM1, W001)
-                Store (^^PCI0.LPCB.EC.RPM2, W002)
-                Store (^^PCI0.LPCB.EC.RPM3, W003)
-                Store (^^PCI0.LPCB.EC.BPV0, W004)
+                Store (B1B2(^^PCI0.LPCB.EC.RP11,^^PCI0.LPCB.EC.RP12), W001)
+                Store (B1B2(^^PCI0.LPCB.EC.RP21,^^PCI0.LPCB.EC.RP22), W002)
+                Store (B1B2(^^PCI0.LPCB.EC.RP31,^^PCI0.LPCB.EC.RP32), W003)
+                Store (B1B4(^^PCI0.LPCB.EC.PV00,^^PCI0.LPCB.EC.PV01,^^PCI0.LPCB.EC.PV02,^^PCI0.LPCB.EC.PV03), W004)
                 Store (0x19, ^^PCI0.LPCB.EC.FDAT)
                 Store (0x0A, ^^PCI0.LPCB.EC.FBUF)
                 Store (One, ^^PCI0.LPCB.EC.FBF1)
@@ -54470,7 +54434,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 Or (W005, ShiftLeft (^^PCI0.LPCB.EC.FBUF, 0x08), W005)
                 Or (W005, ShiftLeft (^^PCI0.LPCB.EC.FBF1, 0x10), W005)
                 Or (W005, ShiftLeft (^^PCI0.LPCB.EC.FBF2, 0x18), W005)
-                Store (^^PCI0.LPCB.EC.BPR0, W006)
+                Store (B1B4(^^PCI0.LPCB.EC.PR00,^^PCI0.LPCB.EC.PR01,^^PCI0.LPCB.EC.PR02,^^PCI0.LPCB.EC.PR03), W006)
                 If (^^PCI0.LPCB.EC.ECOK)
                 {
                     Store (0x02, ^^PCI0.LPCB.EC.FDAT)
@@ -55090,7 +55054,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         If (One)
                         {
                             Store (^^PCI0.LPCB.EC.FDAT, Local1)
-                            Store (^^PCI0.LPCB.EC.OEM3, Local2)
+                            Store (B1B2(^^PCI0.LPCB.EC.OE30,^^PCI0.LPCB.EC.OE31), Local2)
                             Store (Zero, ^^PCI0.LPCB.EC.FCMD)
                         }
 
@@ -55458,7 +55422,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                 {
                     If (^^PCI0.LPCB.EC.ECOK)
                     {
-                        Store (^^PCI0.LPCB.EC.BDC0, Local0)
+                        Store (B1B4(^^PCI0.LPCB.EC.DC00,^^PCI0.LPCB.EC.DC01,^^PCI0.LPCB.EC.DC02,^^PCI0.LPCB.EC.DC03), Local0)
                     }
                     Else
                     {
@@ -55504,7 +55468,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Store (Zero, Local0)
                     If (LEqual (And (PSF0, 0x10), Zero))
                     {
-                        If (^^PCI0.IGPU.PDDS (0x0300))
+                        If (^^PCI0.GFX0.PDDS (0x0300))
                         {
                             Store (One, Local0)
                         }
@@ -57045,16 +57009,16 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             {
                 If (^^PCI0.LPCB.EC.BAT0)
                 {
-                    And (^^PCI0.LPCB.EC.BDC0, 0xFFFF, Local0)
+                    And (B1B4(^^PCI0.LPCB.EC.DC00,^^PCI0.LPCB.EC.DC01,^^PCI0.LPCB.EC.DC02,^^PCI0.LPCB.EC.DC03), 0xFFFF, Local0)
                     Store (Local0, Index (PBIF, One))
-                    And (^^PCI0.LPCB.EC.BFC0, 0xFFFF, Local0)
+                    And (B1B4(^^PCI0.LPCB.EC.FC00,^^PCI0.LPCB.EC.FC01,^^PCI0.LPCB.EC.FC02,^^PCI0.LPCB.EC.FC03), 0xFFFF, Local0)
                     Store (Local0, Index (PBIF, 0x02))
                     Store (Local0, BFCC)
-                    And (^^PCI0.LPCB.EC.BDV0, 0xFFFF, Local0)
+                    And (B1B4(^^PCI0.LPCB.EC.DV00,^^PCI0.LPCB.EC.DV01,^^PCI0.LPCB.EC.DV02,^^PCI0.LPCB.EC.DV03), 0xFFFF, Local0)
                     Store (Local0, Index (PBIF, 0x04))
-                    And (^^PCI0.LPCB.EC.BCW0, 0xFFFF, Local0)
+                    And (B1B4(^^PCI0.LPCB.EC.CW00,^^PCI0.LPCB.EC.CW01,^^PCI0.LPCB.EC.CW02,^^PCI0.LPCB.EC.CW03), 0xFFFF, Local0)
                     Store (Local0, Index (PBIF, 0x05))
-                    And (^^PCI0.LPCB.EC.BCL0, 0xFFFF, Local0)
+                    And (B1B4(^^PCI0.LPCB.EC.CL00,^^PCI0.LPCB.EC.CL01,^^PCI0.LPCB.EC.CL02,^^PCI0.LPCB.EC.CL03), 0xFFFF, Local0)
                     Store (Local0, Index (PBIF, 0x06))
                     Store ("BAT", Index (PBIF, 0x09))
                     Store ("0001", Index (PBIF, 0x0A))
@@ -57104,16 +57068,16 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                     Store (Zero, Local1)
                     If (^^AC.ACFG)
                     {
-                        If (LEqual (And (^^PCI0.LPCB.EC.BST0, 0x02), 0x02))
+                        If (LEqual (And (B1B4(^^PCI0.LPCB.EC.ST00,^^PCI0.LPCB.EC.ST01,^^PCI0.LPCB.EC.ST02,^^PCI0.LPCB.EC.ST03), 0x02), 0x02))
                         {
                             Or (Local0, 0x02, Local0)
-                            And (^^PCI0.LPCB.EC.BPR0, 0xFFFF, Local1)
+                            And (B1B4(^^PCI0.LPCB.EC.PR00,^^PCI0.LPCB.EC.PR01,^^PCI0.LPCB.EC.PR02,^^PCI0.LPCB.EC.PR03), 0xFFFF, Local1)
                         }
                     }
                     Else
                     {
-                        Store (And (^^PCI0.LPCB.EC.BST0, 0x05), Local0)
-                        And (^^PCI0.LPCB.EC.BPR0, 0xFFFF, Local1)
+                        Store (And (B1B4(^^PCI0.LPCB.EC.ST00,^^PCI0.LPCB.EC.ST01,^^PCI0.LPCB.EC.ST02,^^PCI0.LPCB.EC.ST03), 0x05), Local0)
+                        And (B1B4(^^PCI0.LPCB.EC.PR00,^^PCI0.LPCB.EC.PR01,^^PCI0.LPCB.EC.PR02,^^PCI0.LPCB.EC.PR03), 0xFFFF, Local1)
                     }
 
                     And (Local1, 0x8000, Local7)
@@ -57122,13 +57086,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
                         XOr (Local1, 0xFFFF, Local1)
                     }
 
-                    And (^^PCI0.LPCB.EC.BRC0, 0xFFFF, Local2)
-                    And (^^PCI0.LPCB.EC.BPV0, 0xFFFF, Local3)
+                    And (B1B4(^^PCI0.LPCB.EC.RC00,^^PCI0.LPCB.EC.RC01,^^PCI0.LPCB.EC.RC02,^^PCI0.LPCB.EC.RC03), 0xFFFF, Local2)
+                    And (B1B4(^^PCI0.LPCB.EC.PV00,^^PCI0.LPCB.EC.PV01,^^PCI0.LPCB.EC.PV02,^^PCI0.LPCB.EC.PV03), 0xFFFF, Local3)
                     Store (Local0, Index (PBST, Zero))
                     Store (Local1, Index (PBST, One))
                     Store (Local2, Index (PBST, 0x02))
                     Store (Local3, Index (PBST, 0x03))
-                    If (LNotEqual (BFCC, ^^PCI0.LPCB.EC.BFC0))
+                    If (LNotEqual (BFCC, B1B4(^^PCI0.LPCB.EC.FC00,^^PCI0.LPCB.EC.FC01,^^PCI0.LPCB.EC.FC02,^^PCI0.LPCB.EC.FC03)))
                     {
                         Notify (BAT0, 0x81)
                     }
@@ -57156,7 +57120,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     }
 
     Name (ECUP, One)
-    Mutex(EHLD, 0)
+    Mutex (EHLD, 0x00)
     Name (TBTS, Zero)
     Name (RPS0, Zero)
     Name (RPS1, Zero)
@@ -57234,7 +57198,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Mutex(MUTX, 0)
+    Mutex (MUTX, 0x00)
     OperationRegion (PRT0, SystemIO, 0x80, 0x02)
     Field (PRT0, WordAcc, Lock, Preserve)
     {
@@ -57984,54 +57948,54 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         Method (_INI, 0, Serialized)  // _INI: Initialize
         {
             Store (0x03E8, OSYS)
-            If (CondRefOf (\XOSI, Local0))
+            If (CondRefOf (\_OSI, Local0))
             {
-                If (XOSI ("Linux"))
+                If (_OSI ("Linux"))
                 {
                     Store (0x03E8, OSYS)
                 }
 
-                If (XOSI ("Windows 2001"))
+                If (_OSI ("Windows 2001"))
                 {
                     Store (0x07D1, OSYS)
                 }
 
-                If (XOSI ("Windows 2001 SP1"))
+                If (_OSI ("Windows 2001 SP1"))
                 {
                     Store (0x07D1, OSYS)
                 }
 
-                If (XOSI ("Windows 2001 SP2"))
+                If (_OSI ("Windows 2001 SP2"))
                 {
                     Store (0x07D2, OSYS)
                 }
 
-                If (XOSI ("Windows 2001.1"))
+                If (_OSI ("Windows 2001.1"))
                 {
                     Store (0x07D3, OSYS)
                 }
 
-                If (XOSI ("Windows 2006"))
+                If (_OSI ("Windows 2006"))
                 {
                     Store (0x07D6, OSYS)
                 }
 
-                If (XOSI ("Windows 2009"))
+                If (_OSI ("Windows 2009"))
                 {
                     Store (0x07D9, OSYS)
                 }
 
-                If (XOSI ("Windows 2012"))
+                If (_OSI ("Windows 2012"))
                 {
                     Store (0x07DC, OSYS)
                 }
 
-                If (XOSI ("Windows 2013"))
+                If (_OSI ("Windows 2013"))
                 {
                     Store (0x07DD, OSYS)
                 }
 
-                If (XOSI ("Windows 2015"))
+                If (_OSI ("Windows 2015"))
                 {
                     Store (0x07DF, OSYS)
                 }
@@ -58163,7 +58127,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             Zero, 
             Zero
         })
-        Method (XPRW, 2, NotSerialized)
+        Method (GPRW, 2, NotSerialized)
         {
             Store (Arg0, Index (PRWP, Zero))
             Store (ShiftLeft (SS1, One), Local0)
@@ -58459,7 +58423,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.IGPU)
+    Scope (_SB.PCI0.GFX0)
     {
         Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
         {
@@ -58611,7 +58575,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             })
         }
 
-        Scope (_SB.PCI0.IMEI)
+        Scope (_SB.PCI0.HECI)
         {
             Name (_DEP, Package (0x01)  // _DEP: Dependencies
             {
@@ -58646,7 +58610,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.HDEF)
+    Scope (_SB.PCI0.HDAS)
     {
         Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
         {
@@ -60493,7 +60457,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.IGPU", 
+                    "\\_SB.PCI0.GFX0", 
                     One, 
                     Package (0x02)
                     {
@@ -60599,7 +60563,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.HDEF", 
+                    "\\_SB.PCI0.HDAS", 
                     One, 
                     Package (0x02)
                     {
@@ -61252,7 +61216,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 
                 Package (0x03)
                 {
-                    "\\_SB.PCI0.IMEI", 
+                    "\\_SB.PCI0.HECI", 
                     One, 
                     Package (0x02)
                     {
@@ -63156,10 +63120,15 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
             })
         }
     }
-
-    Method (B1B2, 2, NotSerialized)
+    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
+    Method (B1B4, 4, NotSerialized)
     {
-        Return (Or (Arg0, ShiftLeft (Arg1, 0x08)))
+        Store(Arg3, Local0)
+        Or(Arg2, ShiftLeft(Local0, 8), Local0)
+        Or(Arg1, ShiftLeft(Local0, 8), Local0)
+        Or(Arg0, ShiftLeft(Local0, 8), Local0)
+        Return(Local0)
     }
+    
 }
 
