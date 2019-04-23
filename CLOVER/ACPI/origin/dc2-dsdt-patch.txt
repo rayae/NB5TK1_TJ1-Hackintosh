@@ -85,70 +85,66 @@ into method label UPBI code_regex \(\^\^PCI0.LPCB.EC.BCL0, replaceall_matched be
 #Fans control
 #Scope  : _SB.PCI0.LPCB
 #See:https://github.com/datasone/ClevoControl
+#   :https://github.com/coderobe/acpi-p955er/blob/master/ssdt-cdr.dsl
 
 into all code_regex Field\s\(EC81,\sByteAcc,\sLock,\sPreserve\)\n\s+\{ replaceall_matched
 begin
             Field (EC81, ByteAcc, Lock, Preserve)\n
             {\n
                 Offset (0xD0), \n
-                FC00,   8, \n
-                FC01,   8, \n
-                FG00,   8, \n
-                FG01,   8,
+                CFN0,   8, \n
+                CFN1,   8, \n
+                GFN0,   8, \n
+                GFN1,   8,
 end;
 
 into scope label _SB.PCI0.LPCB insert
 begin
-       Device (SMCD)\n
+    Device (SMCD)\n
+    {\n
+        Name (_HID, EisaId ("PNP0C02"))\n
+        Name (\n
+            TACH,\n
+            Package (0x04) {\n
+                "CPU Fan", "FAN0",\n
+                "GPU Fan", "FAN1",\n
+            }\n
+        )\n
+		Name (_CID, "MON00000")\n
+    	Method (WMIB, 3, Serialized)\n
+    	{\n
+   	 		\_SB.WMI.WMBB(Arg0, Arg1, Arg2)\n
+   		}\n
+        Method (FAN0, 0, Serialized)\n
         {\n
-            Name (_HID, EisaId ("PNP0C02"))\n
-            Name (_CID, "MON00000")\n
-            Method (WMIB, 3, Serialized)\n
+            If (\_SB.PCI0.LPCB.EC.ECOK)\n
             {\n
-                ^^^^WMI.WMBB (Arg0, Arg1, Arg2)\n
-            }\n
-
-            Name (TACH, Package (0x06)\n
-            {\n
-                "CPU Fan", \n
-                "FAN0", \n
-                "GPU Fan #1", \n
-                "FAN1"\n
-            })
-            Method (FAN0, 0, Serialized)\n
-            {\n
-                If (^^EC.ECOK)\n
+                Local0 = B1B2(\_SB.PCI0.LPCB.EC.CFN1, \_SB.PCI0.LPCB.EC.CFN0)\n
+                If (Local0 <= 0)\n
                 {\n
-                    Store (B1B2 (^^EC.FC01, ^^EC.FC00), Local0)\n
-                    If (LLessEqual (Local0, Zero))\n
-                    {\n
-                        Return (Zero)\n
-                    }\n
-
-                    Divide (0x0020E6BC, Local0, , Local0)\n
-                    Return (Local0)\n
+                    Return (0)\n
                 }\n
-
-                Return (Zero)\n
-            }
-
-            Method (FAN1, 0, Serialized)\n
-            {\n
-                If (^^EC.ECOK)\n
-                {\n
-                    Store (B1B2 (^^EC.FG01, ^^EC.FG00), Local0)\n
-                    If (LLessEqual (Local0, Zero))\n
-                    {\n
-                        Return (Zero)\n
-                    }\n
-
-                    Divide (0x0020E6BC, Local0, , Local0)\n
-                    Return (Local0)\n
-                }\n
-
-                Return (Zero)\n
+                Local0 = 2156220 / Local0\n
+                Return (Local0)\n
             }\n
+            Return (0)\n
+        }
+
+        Method (FAN1, 0, Serialized)\n
+        {\n
+            If (\_SB.PCI0.LPCB.EC.ECOK)\n
+            {\n
+                Local0 = B1B2(\_SB.PCI0.LPCB.EC.GFN1, \_SB.PCI0.LPCB.EC.GFN0)\n
+                If (Local0 <= 0)\n
+                {\n
+                    Return (0)\n
+                }\n
+                Local0 = 2156220 / Local0\n
+                Return (Local0)\n
+            }\n
+            Return (0)\n
         }\n
+    }
 end;
 
 #audio layout-id 29

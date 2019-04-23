@@ -10506,6 +10506,8 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
         If (LNotEqual(Arg0,5)) {
+If (LNotEqual(Arg0,5)) {
+If (LNotEqual(Arg0,5)) {
 If (Arg0)
         {
             \_SB.TPM.TPTS (Arg0)
@@ -10514,12 +10516,18 @@ If (Arg0)
             \_SB.PCI0.NPTS (Arg0)
         }
 }
+}
+}
+
+
 
     }
 
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
     {
         If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
 \_SB.PCI0.NWAK (Arg0)
         \_SB.PCI0.LPCB.SWAK (Arg0)
         RWAK (Arg0)
@@ -13981,6 +13989,49 @@ If (Arg0)
                 ,   2, 
             ESPI,   1
         }
+        Device (SMCD)
+        {
+            Name (_HID, EisaId ("PNP0C02"))
+            Name (
+            TACH,
+            Package (0x04) {
+                "CPU Fan", "FAN0",
+                "GPU Fan", "FAN1",
+            }
+            )
+            Name (_CID, "MON00000")
+            Method (WMIB, 3, Serialized)
+            {
+                \_SB.WMI.WMBB(Arg0, Arg1, Arg2)
+            }
+            Method (FAN0, 0, Serialized)
+            {
+                If (\_SB.PCI0.LPCB.EC.ECOK)
+                {
+                    Local0 = B1B2(\_SB.PCI0.LPCB.EC.CFN1, \_SB.PCI0.LPCB.EC.CFN0)
+                    If (Local0 <= 0)
+                    {
+                        Return (0)
+                    }
+                    Local0 = 2156220 / Local0
+                    Return (Local0)
+                }
+                Return (0)
+            }        Method (FAN1, 0, Serialized)
+            {
+                If (\_SB.PCI0.LPCB.EC.ECOK)
+                {
+                    Local0 = B1B2(\_SB.PCI0.LPCB.EC.GFN1, \_SB.PCI0.LPCB.EC.GFN0)
+                    If (Local0 <= 0)
+                    {
+                        Return (0)
+                    }
+                    Local0 = 2156220 / Local0
+                    Return (Local0)
+                }
+                Return (0)
+            }
+        }
     }
 
     Scope (_SB.PCI0)
@@ -15195,6 +15246,8 @@ If (Arg0)
                     //"MaximumBootBeepVolume", 77,
                 })
             }
+            
+            
             
         }
 
@@ -18926,6 +18979,10 @@ If (Arg0)
 
             
 
+            
+            
+            
+            
             
             Name (_STA, 0x0F)
             Method (_CRS, 0, NotSerialized)
@@ -50782,57 +50839,6 @@ If (Arg0)
 
     Scope (_SB.PCI0.LPCB)
     {
-        Device (SMCD)
-        {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
-            Name (_CID, "MON00000")  // _CID: Compatible ID
-            Method (WMIB, 3, Serialized)
-            {
-                ^^^^WMI.WMBB (Arg0, Arg1, Arg2)
-            }
-
-            Name (TACH, Package (0x06)
-            {
-                "CPU Fan", 
-                "FAN0", 
-                "GPU Fan #1", 
-                "FAN1"
-            })
-            Method (FAN0, 0, Serialized)
-            {
-                If (^^EC.ECOK)
-                {
-                    Store (B1B2 (^^EC.FC01, ^^EC.FC00), Local0)
-                    If (LLessEqual (Local0, Zero))
-                    {
-                        Return (Zero)
-                    }
-
-                    Divide (0x0020E6BC, Local0, , Local0)
-                    Return (Local0)
-                }
-
-                Return (Zero)
-            }
-
-            Method (FAN1, 0, Serialized)
-            {
-                If (^^EC.ECOK)
-                {
-                    Store (B1B2 (^^EC.FG01, ^^EC.FG00), Local0)
-                    If (LLessEqual (Local0, Zero))
-                    {
-                        Return (Zero)
-                    }
-
-                    Divide (0x0020E6BC, Local0, , Local0)
-                    Return (Local0)
-                }
-
-                Return (Zero)
-            }
-        }
-
         Device (EC)
         {
             Name (_HID, EisaId ("PNP0C09"))  // _HID: Hardware ID
@@ -51158,10 +51164,10 @@ If (Arg0)
             Field (EC81, ByteAcc, Lock, Preserve)
             {
                 Offset (0xD0), 
-                FC00,   8, 
-                FC01,   8, 
-                FG00,   8, 
-                FG01,   8,
+                CFN0,   8, 
+                CFN1,   8, 
+                GFN0,   8, 
+                GFN1,   8,
                 Offset (0xF8), 
                 FCMD,   8, 
                 FDAT,   8, 
@@ -63120,6 +63126,10 @@ If (Arg0)
             })
         }
     }
+    
+    
+    
+    
     Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
     Method (B1B4, 4, NotSerialized)
     {
