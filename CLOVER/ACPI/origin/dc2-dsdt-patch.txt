@@ -18,7 +18,7 @@ Method (B1B4, 4, NotSerialized)\n
 end;
 
 ###########  battery patch
-#######     32-bit EC
+#######     16-bit EC
 #OEM3
 into device label EC code_regex OEM3,\s+16 replace_matched begin OE30,8,OE31,8 end;
 into method label _Q35 code_regex \(OEM3, replace_matched begin (B1B2(OE30,OE31), end;
