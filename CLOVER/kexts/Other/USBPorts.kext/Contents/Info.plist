@@ -55,6 +55,8 @@
 					</dict>
 					<key>HS02</key>
 					<dict>
+						<key>DevSpeed</key>
+						<integer>2</integer>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>

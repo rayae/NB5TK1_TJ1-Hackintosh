@@ -72,20 +72,6 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change APSS to APXX</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					QVBTUw==
-					</data>
-					<key>Replace</key>
-					<data>
-					QVBYWA==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change _DSM to XDSM</string>
 					<key>Disabled</key>
 					<false/>
@@ -96,20 +82,6 @@
 					<key>Replace</key>
 					<data>
 					WERTTQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					T1NJRA==
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNJRA==
 					</data>
 				</dict>
 				<dict>
@@ -130,7 +102,7 @@
 					<key>Comment</key>
 					<string>change EC0 to EC</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					RUMwXw==
@@ -144,7 +116,7 @@
 					<key>Comment</key>
 					<string>change H_EC to EC</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					SF9FQw==
@@ -152,76 +124,6 @@
 					<key>Replace</key>
 					<data>
 					RUNfXw==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change ECDV to EC</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RUNEVg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUNfXw==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EHC1 to EH01, optionally pair with SSDT-EH01.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RUhDMQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EHC2 to EH02, optionally pair with SSDT-EH02.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RUhDMg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EUSB to EH01, optionally pair with SSDT-EH01.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RVVTQg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change USBE to EH02, optionally pair with SSDT-EH02.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					VVNCRQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
 					</data>
 				</dict>
 				<dict>
@@ -240,37 +142,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #1 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					UENJMFZJRF8=
-					</data>
-					<key>Replace</key>
-					<data>
-					UENJMElHUFU=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #2 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					VklEXwhfQURSDAAAAgA=
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQhfQURSDAAAAgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change B0D3 to HDAU, optionally pair with SSDT-HDAU.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					QjBEMw==
@@ -296,40 +170,12 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change AZAL to HDEF, optionally pair with SSDT-HDEF.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					QVpBTA==
-					</data>
-					<key>Replace</key>
-					<data>
-					SERFRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change HECI to IMEI, optionally pair with SSDT-IMEI.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
 					SEVDSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change MEI to IMEI, optionally pair with SSDT-IMEI.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					TUVJXw==
 					</data>
 					<key>Replace</key>
 					<data>
@@ -354,7 +200,7 @@
 					<key>Comment</key>
 					<string>change LPC to LPCB, optionally pair with SSDT-DEHCI.aml, SSDT-DEH01.aml, SSDT-DEH02.aml, SSDT-LPC.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					TFBDXw==
@@ -380,20 +226,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1BUUwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WlBUUwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
 					<false/>
@@ -408,107 +240,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1dBSwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,N) to ZWAK, pair with SSDT-XWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WFdBSwA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,S) to ZWAK, pair with SSDT-XWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WFdBSwg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,N) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,S) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,N) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,S) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					R1BSVwI=
@@ -520,23 +254,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(UPRW,2,N) to XPRW, pair with SSDT-UPRW.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					VVBSVwpwEg==
-					</data>
-					<key>Replace</key>
-					<data>
-					WFBSVwpwEg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change LANC Method(_PRW,0,S) to Method(XPRW,0,..), pair with SSDT-LANCPRW.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					AAAZABQfX1BSVwg=
@@ -550,13 +270,6 @@
 			<key>Rtc8Allowed</key>
 			<true/>
 		</dict>
-		<key>DisabledAML</key>
-		<array>
-			<string>SSDT-DDA.aml</string>
-			<string>SSDT.aml</string>
-			<string>SSDT-XCPM.aml</string>
-			<string>SSDT-PluginType1.aml</string>
-		</array>
 		<key>DropTables</key>
 		<array>
 			<dict>
@@ -594,7 +307,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>abm_firstpolldelay=16000 dart=0 debug=0x100 darkwake=0 keepsyms=1 nv_disable=1 -disablegfxfirmware</string>
+		<string>abm_firstpolldelay=16000 dart=0 debug=0x100 darkwake=0 keepsyms=1 nv_disable=1 -disablegfxfirmware -nobiobeta</string>
 		<key>DefaultVolume</key>
 		<string>Macintosh</string>
 		<key>NeverHibernate</key>
@@ -827,8 +540,6 @@
 				</data>
 			</dict>
 		</array>
-		<key>KextsToPatch</key>
-		<array/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -838,23 +549,23 @@
 		<string>0x67</string>
 		<key>ROM</key>
 		<data>
-		bH0mJj41
+		XtvBYHfR
 		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>09/28/2018</string>
+		<string>07/26/2019</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP151.88Z.F000.B00.1809280842</string>
+		<string>MBP151.88Z.F000.B00.1907261958</string>
 		<key>Board-ID</key>
 		<string>Mac-937A206F2EE63C01</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02811500J9JP4F1M</string>
+		<string>C02833303QXJP4FAD</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -866,7 +577,7 @@
 		<key>ChassisType</key>
 		<string>0x09</string>
 		<key>EfiVersion</key>
-		<string>220.250.320.0.0</string>
+		<string>1037.0.39.151.1</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
@@ -880,20 +591,20 @@
 		<key>Mobile</key>
 		<true/>
 		<key>PlatformFeature</key>
-		<string>0x1A</string>
+		<string>0x02</string>
 		<key>ProductName</key>
 		<string>MacBookPro15,1</string>
 		<key>SerialNumber</key>
-		<string>C02WF9ZUKGYG</string>
+		<string>C02X74ZTKGYG</string>
 		<key>SmUUID</key>
-		<string>B6893B75-5237-40E7-A0F0-41110C8BC939</string>
+		<string>C72B6A19-0121-4867-BAA9-749AF9009EA6</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>CustomUUID</key>
-		<string>EB3CEA75-018B-4C00-838E-44CF89211A9E</string>
+		<string>91B9C367-E863-47E1-A702-B6605617DBD2</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 	</dict>
