@@ -14,6 +14,9 @@ SMBIOS修改为14,1，HDMI热拔插回归 (NVRAM正常了)
 更新PS2驱动解决触摸板卡顿掉帧的问题
 Clover 更新到 5070
 更新hotpatch(可能解决了随机性重启问题)
+
+
+
 20190908
 还原SMBIOS为MacBookPro15,1，14,1会导致NVRAM失效无法保存亮度，但是HDMI热拔插可能失效
 尝试解决随机性声音丢失问题(FakePCIID)
