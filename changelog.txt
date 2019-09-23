@@ -1,0 +1,88 @@
+更新日志：
+
+20190922
+更新AppALC、WhatEverGreen和NoTouchID
+layout-id修改为29，目前可用:28、29、66、88,可自行选用
+SMBIOS修改为14,1，HDMI热拔插回归 (NVRAM正常了)
+回退 VoodooPS2Controller.kext 到v1.9.2 解决触控板滑动不流畅
+修复了启动时的ACPI Error
+
+
+
+20190919
+还原使用FakeSMC，VirtualSMC会导致kernel_task占用过高的问题
+更新PS2驱动解决触摸板卡顿掉帧的问题
+Clover 更新到 5070
+更新hotpatch(可能解决了随机性重启问题)
+20190908
+还原SMBIOS为MacBookPro15,1，14,1会导致NVRAM失效无法保存亮度，但是HDMI热拔插可能失效
+尝试解决随机性声音丢失问题(FakePCIID)
+使用 VirtualSMC 替代 FakeSMC，电池更加精准，但是不能查看风扇速度
+修复 更新为 Catalina 后声音丢失问题
+修复 更新为 Catalina 时无法进入安装界面的问题(安装时使用config_install.plist)
+修复 休眠唤醒不正常的问题(HibernationFixup.kext)
+删除 很多不必要的文件
+更新之后请重建缓存，重置NVRAM
+
+
+
+20190901
+修复更新为10.14.6后 BCM94360CS2的 蓝牙失效问题
+修改SMBIOS为MacBookPro14,1解决了HDMI热拔插的问题
+删除AppleBacklightFixup.kext因为合并入WhatEverGreen
+. Clover 更新到5058
+kexts 更新
+AppleALC 1.3.7 -> 1.4.0
+WhatEverGreen 1.2.9 -> 1.3.1
+Lilu 1.3.6 -> 1.3.8
+VoodooPS2Controller 1.9.2 -> 2.0.2
+CPUFriend 1.1.6 1.1.9
+
+
+
+20190502
+使用新主题
+去除DSDT全面使用SSDT Hotpatch
+增加abm_firstpolldelay=16000使电池识别更快
+清除之前的EFI全新安装
+
+
+
+20190422
+彻底解决电池问题(DSDT+ACPIBatteryManager_1.81.4)插拔能识别有声音
+更新DSDT patch 补丁 dc2-dsdt-patch.txt
+增加风扇控制，已配置好阈值
+
+
+
+20190420
+除无用的config参数
+修复亮度无法保存
+使用DSDT驱动声卡之前使用的 Device/Properities偶尔无法驱动
+去除 不必须的 abm_firstpolldelay=16000
+使用旧的1.81.4版本的ACPIBatteryManager.kext，解决了充电不显示以及热拔插电池提示电池电量不足的bug，使用新版本的会导致电池状态不准(但是电量百分比正常)
+DSDT增加了CPU、GPU风扇的控制
+
+
+
+20190420
+删除不必要的SSDT-UIAC.aml SSDT-USBX.aml UsbjectALl.kext USBInjectALl.kext
+
+
+
+20190419
+新的DSDT，电池及睡眠更加完美，layout-id修改为29、更新 了clover和kexts
+
+
+
+20190406
+修复偶尔重启
+去除不需要的参数
+增加DSDT-Clevo-Control可以控制风扇
+
+
+
+20190402
+增加HoRNDIS.kext(可以通 过USB给电脑共享网络)
+修复电量不更新的bug(增加启动参数-abm_firstpolldelay=16000)
+
