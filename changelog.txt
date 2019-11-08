@@ -1,6 +1,20 @@
 更新日志：
 
+20191107
+
+更新Lilu、WhatEverGreen、AppleALC、HibernationFixup
+更新Clover到v5098
+可正常更新Catalina 10.15.x版本
+
+
+20190923
+
+继续使用 ACPIBatteryManager_1.81.4.kext 解决部分机型电池不正常
+
+
+
 20190922
+
 更新AppALC、WhatEverGreen和NoTouchID
 layout-id修改为29，目前可用:28、29、66、88,可自行选用
 SMBIOS修改为14,1，HDMI热拔插回归 (NVRAM正常了)
@@ -10,6 +24,7 @@ SMBIOS修改为14,1，HDMI热拔插回归 (NVRAM正常了)
 
 
 20190919
+
 还原使用FakeSMC，VirtualSMC会导致kernel_task占用过高的问题
 更新PS2驱动解决触摸板卡顿掉帧的问题
 Clover 更新到 5070
@@ -18,6 +33,7 @@ Clover 更新到 5070
 
 
 20190908
+
 还原SMBIOS为MacBookPro15,1，14,1会导致NVRAM失效无法保存亮度，但是HDMI热拔插可能失效
 尝试解决随机性声音丢失问题(FakePCIID)
 使用 VirtualSMC 替代 FakeSMC，电池更加精准，但是不能查看风扇速度
@@ -30,6 +46,7 @@ Clover 更新到 5070
 
 
 20190901
+
 修复更新为10.14.6后 BCM94360CS2的 蓝牙失效问题
 修改SMBIOS为MacBookPro14,1解决了HDMI热拔插的问题
 删除AppleBacklightFixup.kext因为合并入WhatEverGreen
@@ -44,6 +61,7 @@ CPUFriend 1.1.6 1.1.9
 
 
 20190502
+
 使用新主题
 去除DSDT全面使用SSDT Hotpatch
 增加abm_firstpolldelay=16000使电池识别更快
@@ -52,6 +70,7 @@ CPUFriend 1.1.6 1.1.9
 
 
 20190422
+
 彻底解决电池问题(DSDT+ACPIBatteryManager_1.81.4)插拔能识别有声音
 更新DSDT patch 补丁 dc2-dsdt-patch.txt
 增加风扇控制，已配置好阈值
@@ -59,6 +78,7 @@ CPUFriend 1.1.6 1.1.9
 
 
 20190420
+
 除无用的config参数
 修复亮度无法保存
 使用DSDT驱动声卡之前使用的 Device/Properities偶尔无法驱动
@@ -69,16 +89,19 @@ DSDT增加了CPU、GPU风扇的控制
 
 
 20190420
+
 删除不必要的SSDT-UIAC.aml SSDT-USBX.aml UsbjectALl.kext USBInjectALl.kext
 
 
 
 20190419
+
 新的DSDT，电池及睡眠更加完美，layout-id修改为29、更新 了clover和kexts
 
 
 
 20190406
+
 修复偶尔重启
 去除不需要的参数
 增加DSDT-Clevo-Control可以控制风扇
@@ -86,6 +109,7 @@ DSDT增加了CPU、GPU风扇的控制
 
 
 20190402
+
 增加HoRNDIS.kext(可以通 过USB给电脑共享网络)
 修复电量不更新的bug(增加启动参数-abm_firstpolldelay=16000)
 

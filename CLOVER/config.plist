@@ -72,6 +72,24 @@
 			<array>
 				<dict>
 					<key>Comment</key>
+					<string>_STA  to XSTA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1NUQQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFNUQQ==
+					</data>
+					<key>TgtBridge</key>
+					<data>
+					UlRDXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>change _DSM to XDSM</string>
 					<key>Disabled</key>
 					<false/>
@@ -307,7 +325,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>abm_firstpolldelay=16000 dart=0 debug=0x100 darkwake=0 keepsyms=1 nv_disable=1 -disablegfxfirmware -nobiobeta -v</string>
+		<string>abm_firstpolldelay=16000 dart=0 debug=0x100 darkwake=0 keepsyms=1 nv_disable=1 -disablegfxfirmware -nobiobeta</string>
 		<key>DefaultVolume</key>
 		<string>Macintosh</string>
 		<key>NeverHibernate</key>
@@ -565,7 +583,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02742902QXHWVP1M</string>
+		<string>C02713104QXHWVPJA</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -595,16 +613,16 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string>C02VKHY8HV29</string>
+		<string>C02THFYLHV29</string>
 		<key>SmUUID</key>
-		<string>2E8355E2-1FC7-4127-913F-777E0463E0E7</string>
+		<string>88C7EB7D-86E9-4388-A231-A0C34CC19990</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>CustomUUID</key>
-		<string>A6A3E677-25C3-4B43-863D-43F5B443B181</string>
+		<string>B2324A2A-F977-433A-83F2-C7232D1672AB</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 	</dict>

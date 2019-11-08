@@ -565,7 +565,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02727130CDHWVPJC</string>
+		<string>C02709207QXHWVPAD</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -595,16 +595,16 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string>C02V10AFHV29</string>
+		<string>C02TCAYXHV29</string>
 		<key>SmUUID</key>
-		<string>BE749E0C-F9A0-4153-90B9-8B015630BEB0</string>
+		<string>F02C89C7-7E12-483C-BDAC-D7A932EC172D</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>CustomUUID</key>
-		<string>4722C446-40BF-4AEE-B7BD-72EA8994525C</string>
+		<string>6D8C62E7-7E9F-4DAC-8A05-97889ED0FE86</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 	</dict>
