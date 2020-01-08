@@ -39,6 +39,6 @@
 |SMBIOS | MacBookPro14,1     |
 
 # 更多细节内容
-点击链接查看：https://bavelee.cn/archives/60/
+点击链接查看：https://bavelee.cn/archives/60.html
 
 
