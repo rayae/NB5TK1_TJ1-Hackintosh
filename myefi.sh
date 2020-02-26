@@ -37,7 +37,7 @@ if test -z $1;then
 	exit 1
 fi
 cd ..
-zip -r "$1" EFI
+zip -r "$1" EFI/BOOT EFI/OC EFI/README.md
 }
 
 if test -z $1;then
