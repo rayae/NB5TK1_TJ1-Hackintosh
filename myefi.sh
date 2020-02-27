@@ -32,18 +32,18 @@ change_config "4722C446-40BF-4AEE-B7BD-72EA8994525C" "UUID0000"
 echo "UUID 已清除"
 }
 make(){
-if test -z $1;then
+if test -z "$1";then
 	echo "less than 1 arguments"
 	exit 1
 fi
 clear_uuid
 cd ..
 zip -r "$1" EFI/BOOT EFI/OC EFI/README.md
-reset_uuid
 cd -
+reset_uuid
 }
 push(){
-if test -z $1;then
+if test -z "$1";then
 	echo "less than 1 arguments"
 	exit 1
 fi
@@ -61,9 +61,9 @@ elif [[ "$1"x == "clear_uuid"x ]];then
 elif [[ "$1"x == "reset_uuid"x ]];then
 		reset_uuid
 elif [[ "$1"x == "make"x ]];then
-		make $2
+		make "$2"
 elif [[ "$1"x == "push"x ]];then
-		push $2
+		push "$2"
 fi
 
 
