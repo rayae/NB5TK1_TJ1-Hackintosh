@@ -4,7 +4,7 @@ config=$cwd/OC/config.plist
 
 usage(){
 echo "
-  $0 <make|reset_uuid|clear_uuid> [extra arguments...]
+  $0 <make|reset_uuid|clear_uuid|push> [extra arguments...]
 "
 }
 change_config(){
@@ -36,8 +36,22 @@ if test -z $1;then
 	echo "less than 1 arguments"
 	exit 1
 fi
+clear_uuid
 cd ..
 zip -r "$1" EFI/BOOT EFI/OC EFI/README.md
+reset_uuid
+cd -
+}
+push(){
+if test -z $1;then
+	echo "less than 1 arguments"
+	exit 1
+fi
+clear_uuid
+git add .
+git commit -m "$2"
+git push -u origin OpenCore
+reset_uuid
 }
 
 if test -z $1;then
@@ -48,6 +62,8 @@ elif [[ "$1"x == "reset_uuid"x ]];then
 		reset_uuid
 elif [[ "$1"x == "make"x ]];then
 		make $2
+elif [[ "$1"x == "push"x ]];then
+		push $2
 fi
 
 
