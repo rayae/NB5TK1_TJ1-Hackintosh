@@ -891,7 +891,7 @@
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>Resolution</key>
-			<string>3840×2160</string>
+			<string>1920x1080</string>
 			<key>ShowPicker</key>
 			<false/>
 			<key>TakeoffDelay</key>
@@ -973,7 +973,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta -alcid=29 -igfxmlr -cdfon</string>
+				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta -alcid=29</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>nvda_drv</key>
