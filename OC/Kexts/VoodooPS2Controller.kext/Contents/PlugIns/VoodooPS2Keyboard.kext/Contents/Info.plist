@@ -300,7 +300,7 @@
 					<key>HIDF12EjectDelay</key>
 					<integer>250</integer>
 					<key>LogScanCodes</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>Make Application key into Apple Fn key</key>
 					<false/>
 					<key>Make Application key into right windows</key>
@@ -603,7 +603,7 @@
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>com.apple.iokit.IOHIDFamily</key>
+		<key>com.apple.iokit.IOHIDSystem</key>
 		<string>1.1</string>
 		<key>com.apple.kpi.bsd</key>
 		<string>8.0.0</string>
