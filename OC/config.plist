@@ -1115,14 +1115,14 @@
 				<key>DefaultBackgroundColor</key>
 				<data>AAAAAA==</data>
 				<key>UIScale</key>
-				<data>Ag==</data>
+				<data>AQ==</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta -alcid=29 -igfxmlr -cdfon</string>
+				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta -alcid=29</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>nvda_drv</key>
@@ -1185,7 +1185,7 @@
 			<key>AdviseWindows</key>
 			<true/>
 			<key>MLB</key>
-			<string>C02727130CDHWVPJC</string>
+			<string>MLB0000</string>
 			<key>ROM</key>
 			<data>ROM0</data>
 			<key>SpoofVendor</key>
@@ -1193,9 +1193,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro14,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02V10AFHV29</string>
+			<string>SSN0000</string>
 			<key>SystemUUID</key>
-			<string>F0960000-0000-1000-8000-80FA5B6077D1</string>
+			<string>UUID0000</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
