@@ -1050,8 +1050,6 @@
 				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta -alcid=29</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
-				<key>nvda_drv</key>
-				<data></data>
 				<key>prev-lang:kbd</key>
 				<data>emgtSGFuczoyNTI=</data>
 			</dict>
@@ -1110,17 +1108,17 @@
 			<key>AdviseWindows</key>
 			<true/>
 			<key>MLB</key>
-			<string>MLB0000</string>
+			<string>000000000000000000000</string>
 			<key>ROM</key>
-			<data>ROM0000</data>
+			<data>00000000</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
 			<string>MacBookPro14,1</string>
 			<key>SystemSerialNumber</key>
-			<string>SSN0000</string>
+			<string>000000000000</string>
 			<key>SystemUUID</key>
-			<string>UUID0000</string>
+			<string>00000000-0000-0000-0000-000000000000</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
