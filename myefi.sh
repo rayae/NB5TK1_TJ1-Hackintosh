@@ -33,7 +33,7 @@ echo "UUID 已清除"
 }
 resmy(){
 	echo "清除我的配置文件"
-	cp -f $config4k $config
+	cp -f $config $config4k
 	echo "删除 2160p 启动参数\t: -igfxmlr -cdfon"
 	/usr/bin/sed -i "" "s/-alcid=29 -igfxmlr -cdfon/-alcid=29/g" $config
 	echo "修改为 1080p 分辨率\t: 3840×2160 -> 1920x1080"
