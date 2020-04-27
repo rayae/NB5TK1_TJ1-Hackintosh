@@ -73,7 +73,7 @@ if test -z "$1";then
 fi
 autoconfig
 cd ..
-zip -qr "$1" EFI/BOOT EFI/OC EFI/1.常用命令 EFI/README.md
+zip -qr "$1" EFI/BOOT EFI/OC EFI/附加工具 EFI/README.md
 cd - >/dev/null
 usemy
 }
