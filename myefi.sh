@@ -2,6 +2,20 @@
 cwd=$(dirname $0)
 config=$cwd/OC/config.plist
 config4k=$cwd/OC/config_4k.plist
+backup_path=~/UUID-Backup
+getCode(){
+	if test ! -f $backup_path/$1;then
+		echo null
+		return
+	fi
+	echo `cat $backup_path/$1`
+}
+
+mlb=`getCode MLB`
+rom=`getCode ROM`
+ssn=`getCode SystemSerialNumber`
+uuid=`getCode SystemUUID`
+
 usage(){
 echo "
   $0 <make|reset_uuid|clear_uuid|push> [extra arguments...]
@@ -23,10 +37,10 @@ setCode(){
 	sed -i "" "${p}s#<.*>#$2#" $config
 }
 reset_uuid(){
-setCode MLB "<string>C02727130CDHWVPJC</string>"
-setCode ROM "<data>U08lML6w</data>"
-setCode SystemSerialNumber "<string>C02V10AFHV29</string>"
-setCode SystemUUID "<string>F0960000-0000-1000-8000-80FA5B6077D1</string>"
+setCode MLB "<string>${mlb}</string>"
+setCode ROM "<data>${rom}</data>"
+setCode SystemSerialNumber "<string>${ssn}</string>"
+setCode SystemUUID "<string>${uuid}</string>"
 echo "UUID 已恢复"
 }
 clear_uuid(){
