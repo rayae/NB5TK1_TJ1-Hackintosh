@@ -62,7 +62,7 @@ resmy(){
 	echo "清除我的配置文件"
 	cp -f $config $config4k
 	echo "删除 2160p 启动参数\t: -igfxmlr -cdfon"
-	/usr/bin/sed -i "" "s/-alcid=29 -igfxmlr -cdfon/-alcid=29/g" $config
+	/usr/bin/sed -i "" "s/ -igfxmlr -cdfon//g" $config
 	close_uiscale
 	clear_uuid
 	echo "已生成 1080p 配置文件\t: $config"
@@ -77,7 +77,7 @@ autoconfig(){
 	resmy
 	cp -f $config $config4k
 	echo "增加 2160p 启动参数\t: -igfxmlr -cdfon"
-	/usr/bin/sed -i "" "s/-alcid=29/-alcid=29 -igfxmlr -cdfon/g" $config4k
+	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmlr -cdfon/g" $config4k
 	echo "已生成 2160p 配置文件\t: $config4k"
 }
 make(){
