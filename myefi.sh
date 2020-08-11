@@ -18,7 +18,7 @@ uuid=`getCode SystemUUID`
 
 usage(){
 echo "
-  $0 <make|reset_uuid|clear_uuid|push> [extra arguments...]
+  $0 <make|reset_uuid|clear_uuid|push|rmf(remove_macos_files)> [extra arguments...]
 "
 }
 change_config(){
@@ -44,6 +44,7 @@ setCode SystemUUID "<string>${uuid}</string>"
 echo "UUID 已恢复"
 }
 clear_uuid(){
+remove_macos_files
 setCode MLB "<string>000000000000000000000</string>"
 setCode ROM "<data>00000000</data>"
 setCode SystemSerialNumber "<string>000000000000</string>"
@@ -102,6 +103,9 @@ git commit -m "$1"
 git push -u origin OpenCore
 usemy
 }
+remove_macos_files(){
+	find "$cwd/.." -name "._*" -exec rm -rf {} \;
+}
 
 
 if test -z $1;then
@@ -114,6 +118,8 @@ elif [[ "$1"x == "make"x ]];then
 		make "$2"
 elif [[ "$1"x == "push"x ]];then
 		push "$2"
+elif [[ "$1"x == "rmf"x ]];then
+		remove_macos_files
 fi
 
 
