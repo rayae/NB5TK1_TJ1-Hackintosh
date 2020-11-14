@@ -61,25 +61,25 @@ close_uiscale(){
 }
 resmy(){
 	echo "清除我的配置文件"
-	cp -f $config $config4k
-	echo "删除 2160p 启动参数\t: -igfxmlr -cdfon"
-	/usr/bin/sed -i "" "s/ -igfxmlr -cdfon//g" $config
+	#cp -f $config $config4k
+	#echo "删除 2160p 启动参数\t: -igfxmlr -cdfon"
+	#/usr/bin/sed -i "" "s/ -igfxmlr -cdfon//g" $config
 	close_uiscale
 	clear_uuid
 	echo "已生成 1080p 配置文件\t: $config"
 }
 usemy(){
 	echo "使用我的配置文件"
-	cp -f $config4k $config
+	#cp -f $config4k $config
 	open_uiscale
 	reset_uuid
 }
 autoconfig(){
 	resmy
-	cp -f $config $config4k
-	echo "增加 2160p 启动参数\t: -igfxmlr -cdfon"
-	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmlr -cdfon/g" $config4k
-	echo "已生成 2160p 配置文件\t: $config4k"
+	#cp -f $config $config4k
+	#echo "增加 2160p 启动参数\t: -igfxmlr -cdfon"
+	#/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmlr -cdfon/g" $config4k
+	#echo "已生成 2160p 配置文件\t: $config4k"
 }
 make(){
 if test -z "$1";then
