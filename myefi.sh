@@ -36,6 +36,14 @@ setCode(){
 	let p=p+1
 	sed -i "" "${p}s#<.*>#$2#" $config
 }
+reset_edid(){
+	echo "恢复 4K@48hz EDID 参数\t: AAPL00,override-no-connect"
+	/usr/bin/sed -i "" "s/#AAPL00,override-no-connect/AAPL00,override-no-connect/g" $config
+}
+clear_edid(){
+	echo "清除 4K@48hz EDID 参数\t: AAPL00,override-no-connect"
+	/usr/bin/sed -i "" "s/AAPL00,override-no-connect/#AAPL00,override-no-connect/g" $config
+}
 reset_uuid(){
 setCode MLB "<string>${mlb}</string>"
 setCode ROM "<data>${rom}</data>"
@@ -66,6 +74,7 @@ resmy(){
 	#/usr/bin/sed -i "" "s/ -igfxmlr -cdfon//g" $config
 	close_uiscale
 	clear_uuid
+	clear_edid
 	echo "已生成 1080p 配置文件\t: $config"
 }
 usemy(){
@@ -73,6 +82,7 @@ usemy(){
 	#cp -f $config4k $config
 	open_uiscale
 	reset_uuid
+	reset_edid
 }
 autoconfig(){
 	resmy

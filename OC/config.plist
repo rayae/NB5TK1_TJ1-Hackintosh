@@ -417,7 +417,7 @@
 				<data>AACSPg==</data>
 				<key>AAPL,slot-name</key>
 				<string>Built-in</string>
-				<key>AAPL00,override-no-connect</key>
+				<key>#AAPL00,override-no-connect</key>
 				<data>AP///////wAGr+swAAAAABAbAQSlIhN4AgklpVZPmycMUFQAAAABAQEBAQEBAQEBAQEBAQEBpqYAoPBwPoAwIDUAWMEQAAAYUtAAoPBwlYQwIDUAJaUQAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAUMP8SPMiPD2TIICAgALE=</data>
 				<key>complete-modeset</key>
 				<data>AQAAAA==</data>
