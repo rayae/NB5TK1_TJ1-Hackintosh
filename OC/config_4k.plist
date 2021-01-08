@@ -1034,7 +1034,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -wegbeta -alcbeta -nobiobeta</string>
+				<string>debug=0x100 darkwake=0 keepsyms=1 -lilubetaall -igfxmpc -wegbeta -alcbeta -nobiobeta</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
 				<key>csr-active-config</key>

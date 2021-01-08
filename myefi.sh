@@ -36,14 +36,7 @@ setCode(){
 	let p=p+1
 	sed -i "" "${p}s#<.*>#$2#" $config
 }
-reset_edid(){
-	echo "恢复 4K@48hz EDID 参数\t: AAPL00,override-no-connect"
-	/usr/bin/sed -i "" "s/#AAPL00,override-no-connect/AAPL00,override-no-connect/g" $config
-}
-clear_edid(){
-	echo "清除 4K@48hz EDID 参数\t: AAPL00,override-no-connect"
-	/usr/bin/sed -i "" "s/AAPL00,override-no-connect/#AAPL00,override-no-connect/g" $config
-}
+
 reset_uuid(){
 setCode MLB "<string>${mlb}</string>"
 setCode ROM "<data>${rom}</data>"
@@ -69,27 +62,25 @@ close_uiscale(){
 }
 resmy(){
 	echo "清除我的配置文件"
-	#cp -f $config $config4k
-	#echo "删除 2160p 启动参数\t: -igfxmlr -cdfon"
-	#/usr/bin/sed -i "" "s/ -igfxmlr -cdfon//g" $config
+	cp -f $config $config4k
+	echo "删除 2160p 启动参数\t: -igfxmpc"
+	/usr/bin/sed -i "" "s/ -igfxmpc//g" $config
 	close_uiscale
 	clear_uuid
-	clear_edid
 	echo "已生成 1080p 配置文件\t: $config"
 }
 usemy(){
 	echo "使用我的配置文件"
-	#cp -f $config4k $config
+	cp -f $config4k $config
 	open_uiscale
 	reset_uuid
-	reset_edid
 }
 autoconfig(){
 	resmy
-	#cp -f $config $config4k
-	#echo "增加 2160p 启动参数\t: -igfxmlr -cdfon"
-	#/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmlr -cdfon/g" $config4k
-	#echo "已生成 2160p 配置文件\t: $config4k"
+	cp -f $config $config4k
+	echo "增加 2160p 启动参数\t: -igfxmpc"
+	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmpc/g" $config4k
+	echo "已生成 2160p 配置文件\t: $config4k"
 }
 make(){
 if test -z "$1";then
@@ -98,7 +89,7 @@ if test -z "$1";then
 fi
 autoconfig
 cd ..
-zip -qr "$1" EFI/BOOT EFI/OC EFI/附加工具 EFI/README.md
+zip -qr "$1" EFI/BOOT EFI/OC EFI/附加工具 EFI/README.md EFI/Microsoft
 cd - >/dev/null
 usemy
 }
