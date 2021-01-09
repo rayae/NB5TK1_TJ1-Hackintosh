@@ -63,8 +63,8 @@ close_uiscale(){
 resmy(){
 	echo "清除我的配置文件"
 	cp -f $config $config4k
-	echo "删除 2160p 启动参数\t: -igfxmpc"
-	/usr/bin/sed -i "" "s/ -igfxmpc//g" $config
+	echo "删除 2160p 启动参数\t: -igfxmpc -igfxblr"
+	/usr/bin/sed -i "" "s/ -igfxmpc -igfxblr//g" $config
 	close_uiscale
 	clear_uuid
 	echo "已生成 1080p 配置文件\t: $config"
@@ -78,8 +78,8 @@ usemy(){
 autoconfig(){
 	resmy
 	cp -f $config $config4k
-	echo "增加 2160p 启动参数\t: -igfxmpc"
-	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmpc/g" $config4k
+	echo "增加 2160p 启动参数\t: -igfxmpc -igfxblr"
+	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmpc -igfxblr/g" $config4k
 	echo "已生成 2160p 配置文件\t: $config4k"
 }
 make(){
