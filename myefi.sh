@@ -52,35 +52,29 @@ setCode SystemSerialNumber "<string>000000000000</string>"
 setCode SystemUUID "<string>00000000-0000-0000-0000-000000000000</string>"
 echo "UUID 已清除"
 }
-open_uiscale(){
-	echo "修改 UISCale 为\t: 02"
+enable_4k(){
+	echo "为 4K 屏幕设置参数"
+	setCode dpcd-max-link-rate "<data>FAAAAA==</data>"
 	setCode UIScale "<data>Ag==</data>"
 }
-close_uiscale(){
-	echo "修改 UISCale 为\t: 01"
+disable_4k(){
+	echo "为 1080P 屏幕设置参数"
+	setCode dpcd-max-link-rate "<data>CgAAAA==</data>"
 	setCode UIScale "<data>AQ==</data>"
 }
-resmy(){
-	echo "清除我的配置文件"
-	cp -f $config $config4k
-	echo "删除 2160p 启动参数\t: -igfxmpc -igfxblr"
-	/usr/bin/sed -i "" "s/ -igfxmpc -igfxblr//g" $config
-	close_uiscale
-	clear_uuid
-	echo "已生成 1080p 配置文件\t: $config"
-}
 usemy(){
-	echo "使用我的配置文件"
+	echo "恢复我的配置文件"
 	cp -f $config4k $config
-	open_uiscale
+	rm -f $config4k
+	enable_4k
 	reset_uuid
 }
 autoconfig(){
-	resmy
+	clear_uuid
 	cp -f $config $config4k
-	echo "增加 2160p 启动参数\t: -igfxmpc -igfxblr"
-	/usr/bin/sed -i "" "s/-lilubetaall/-lilubetaall -igfxmpc -igfxblr/g" $config4k
-	echo "已生成 2160p 配置文件\t: $config4k"
+	echo "已生成 4K屏 配置文件\t: $config4k"
+	disable_4k
+	echo "已生成 1080P屏 配置文件\t: $config"
 }
 make(){
 if test -z "$1";then
@@ -89,7 +83,7 @@ if test -z "$1";then
 fi
 autoconfig
 cd ..
-zip -qr "$1" EFI/BOOT EFI/OC EFI/附加工具 EFI/README.md EFI/Microsoft
+zip -qr "$1" EFI/BOOT EFI/OC EFI/附加工具 EFI/README.md
 cd - >/dev/null
 usemy
 }
