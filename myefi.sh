@@ -112,15 +112,16 @@ cd - >/dev/null
 usemy
 }
 push(){
-if test -z "$1";then
-	echo "less than 1 arguments"
+if test -z "$2";then
+	echo "less than 2 arguments"
 	exit 1
 fi
 remove_macos_files
 autoconfig
+git checkout "$2"
 git add .
 git commit -m "$1"
-git push -u origin OpenCore
+git push -u origin "$2"
 usemy
 }
 remove_macos_files(){
@@ -137,7 +138,9 @@ elif [[ "$1"x == "reset_uuid"x ]];then
 elif [[ "$1"x == "make"x ]];then
 		make "$2"
 elif [[ "$1"x == "push"x ]];then
-		push "$2"
+		push "$2" OpenCore
+elif [[ "$1"x == "push-dev"x ]];then
+		push "$2" dev
 elif [[ "$1"x == "rmf"x ]];then
 		remove_macos_files
 fi

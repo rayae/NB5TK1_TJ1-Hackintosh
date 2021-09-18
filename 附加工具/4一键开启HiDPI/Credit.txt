@@ -1,3 +1,0 @@
-Source from one-key-hidpi（https://github.com/xzhih/one-key-hidpi）
-Modified by 「Takoyaki White」
-:)

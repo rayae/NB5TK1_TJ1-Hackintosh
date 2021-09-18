@@ -1,0 +1,28 @@
+# 首先把下面的 passsword="1212" 中的 1212 换成你的开机登录密码
+# 然后在启动台里找到 自动操作 文件-新建 文稿类型选择应用程序 名称那里搜索shell
+# 找到运行shell脚本，然后把下面的开始-结束的内容粘贴进去保存到应用程序，比如“自启脚本.app”
+# 最后在 系统偏好设置-用户与群组-登录项 那里添加你刚才保存的应用程序“自启脚本.app”
+
+######## 自启动脚本开始 ########
+password="1212"
+
+
+# 挂载 EFI
+echo "$password"|sudo -S mkdir /Volumes/EFI
+echo "$password"|sudo -S mount -t msdos /dev/disk0s1 /Volumes/EFI
+
+# 去除偏好设置小红点
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+
+# 解锁系统目录写入
+echo "$password"|sudo -S mount -uw / && killall Finder
+
+# 睡眠优化
+echo "$password"|sudo -S pmset -a hibernatemode 0
+echo "$password"|sudo -S rm -rf /var/vm/sleepimage
+echo "$password"|sudo -S mkdir /var/vm/sleepimage
+echo "$password"|sudo -S pmset -a standby 0
+echo "$password"|sudo -S pmset -a autopoweroff 0
+echo "$password"|sudo -S pmset -a proximitywake 0
+
+######## 自启动脚本结束 ########
