@@ -474,6 +474,26 @@
 				<string>Internal@0,31,0</string>
 				<key>device_type</key>
 				<string>ISA bridge</string>
+				<key>ec-device</key>
+				<string>generic</string>
+				<key>fan-count</key>
+				<integer>2</integer>
+				<key>fan0-addr</key>
+				<integer>208</integer>
+				<key>fan0-big</key>
+				<integer>1</integer>
+				<key>fan0-dividend</key>
+				<integer>2156220</integer>
+				<key>fan0-size</key>
+				<integer>2</integer>
+				<key>fan1-addr</key>
+				<integer>210</integer>
+				<key>fan1-big</key>
+				<integer>1</integer>
+				<key>fan1-dividend</key>
+				<integer>2156220</integer>
+				<key>fan1-size</key>
+				<integer>2</integer>
 				<key>model</key>
 				<string>H370 Chipset LPC/eSPI Controller</string>
 			</dict>
@@ -889,6 +909,24 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCProcessor</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>SMCSuperIO.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCSuperIO</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
