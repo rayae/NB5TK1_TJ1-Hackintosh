@@ -141,6 +141,10 @@ elif [[ "$1"x == "push"x ]];then
 		push "$2" OpenCore
 elif [[ "$1"x == "push-dev"x ]];then
 		push "$2" dev
+elif [[ "$1"x == "stash"x ]];then
+		autoconfig
+elif [[ "$1"x == "unstash"x ]];then
+		usemy
 elif [[ "$1"x == "rmf"x ]];then
 		remove_macos_files
 fi
