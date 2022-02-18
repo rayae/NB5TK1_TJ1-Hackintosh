@@ -542,7 +542,7 @@
                     <key>disable-external-gpu</key>
                     <data>AQAAAA==</data>
                     <key>dpcd-max-link-rate</key>
-                    <data>FAAAAA==</data>
+                    <data>CgAAAA==</data>
                     <key>enable-backlight-registers-fix</key>
                     <data>AQAAAA==</data>
                     <key>enable-dpcd-max-link-rate-fix</key>
@@ -1199,7 +1199,7 @@
                 <key>TakeoffDelay</key>
                 <integer>0</integer>
                 <key>Timeout</key>
-                <integer>3</integer>
+                <integer>5</integer>
             </dict>
             <key>Debug</key>
             <dict>
@@ -1267,7 +1267,7 @@
                     <key>DefaultBackgroundColor</key>
                     <data>AAAAAA==</data>
                     <key>UIScale</key>
-                    <data>Ag==</data>
+                    <data>AQ==</data>
                 </dict>
                 <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
                 <dict>
